@@ -9,24 +9,30 @@ var question_list =[
 ]
 
 var curr_index = -1
-var cam
+var curr_action = "N/A"
+var player
 
 @export var slowed_time : float = 0.25
 
 func _ready() -> void:
-	cam = get_parent().get_parent()
+	player = get_parent().get_parent().target
 
 func on_text_entered() -> void:
 	var text : String = $TextInput.get_line(0)
 	text = text.strip_edges()
 	
 	if text.nocasecmp_to("Attack()") == 0:
-		curr_index = 0
+		curr_index = randi_range(0, question_list.size())
+		curr_action = "attack"
 		prompt_question()
 	elif text.nocasecmp_to("Crouch()") == 0:
-		print("Crouch")
+		curr_index = randi_range(0, question_list.size())
+		curr_action = "crouch"
+		prompt_question()
 	elif text.nocasecmp_to("Block()") == 0:
-		print("Block")
+		curr_index = randi_range(0, question_list.size())
+		curr_action = "block"
+		prompt_question()
 	
 	$TextInput.text = ""
 
@@ -41,11 +47,22 @@ func answer_question():
 	if text.nocasecmp_to(question_list[curr_index][1]) == 0:
 		print("Success")
 		$TextInput.visible = false
+		
+		if curr_action == "attack":
+			attack()
+		elif curr_action == "block":
+			block()
 	else:
 		print("Fail")
 	
 	$TextInput.text = ""
 	$QuestionLabel.visible = false
+
+func attack():
+	player.attack()
+
+func block():
+	player.block()
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("Enter"):
@@ -56,9 +73,9 @@ func _process(delta: float) -> void:
 	elif(Input.is_action_just_pressed("InputBar")):
 		if $TextInput.visible:
 			$TextInput.visible = false
-			cam.target.is_player_active = true
+			player.is_player_active = true
 			Engine.time_scale = 1.0
 		else:
 			$TextInput.visible = true
-			cam.target.is_player_active = false
+			player.is_player_active = false
 			Engine.time_scale = slowed_time
