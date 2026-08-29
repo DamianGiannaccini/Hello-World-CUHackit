@@ -4,8 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://bdsucn8y8bau5" path="res://icon.svg" id="2_r0du0"]
 [ext_resource type="PackedScene" uid="uid://b5nxf7a0gsuy5" path="res://player.tscn" id="3_r0du0"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_uu6xs"]
-
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cm0pq"]
 texture = ExtResource("2_r0du0")
 0:0/0 = 0
@@ -80,25 +78,14 @@ sources/0 = SubResource("TileSetAtlasSource_cm0pq")
 
 [node name="Node2D" type="Node2D" unique_id=1225086017]
 
-[node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=493499546]
-position = Vector2(347, -93)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=752684679]
-scale = Vector2(2.3260965, 2.039643)
-shape = SubResource("RectangleShape2D_uu6xs")
-
-[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D" unique_id=2046205973]
-scale = Vector2(0.3600006, 0.3600006)
-texture = ExtResource("2_r0du0")
-
 [node name="Camera2D" type="Camera2D" parent="." unique_id=534792150 node_paths=PackedStringArray("target")]
 script = ExtResource("1_uu6xs")
-target = NodePath("../Node2D")
+target = NodePath("../Player")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1769999956]
 tile_map_data = PackedByteArray("AAABAAAAAAABAAAAAAACAAAAAAABAAAAAAADAAAAAAABAAAAAAAGAP7/AAABAAAAAAAHAP7/AAABAAAAAAAIAP7/AAABAAAAAAAJAP7/AAABAAAAAAANAP//AAABAAAAAAANAAAAAAABAAAAAAAOAAAAAAABAAAAAAAPAAAAAAABAAAAAAAUAP7/AAABAAAAAAAVAP7/AAABAAAAAAAWAP7/AAABAAAAAAAXAP7/AAABAAAAAAAXAP3/AAABAAAAAAAeAPz/AAABAAAAAAAfAPz/AAABAAAAAAAgAPz/AAABAAAAAAA=")
 tile_set = SubResource("TileSet_fos0i")
 
-[node name="Node2D" parent="." unique_id=1730243485 instance=ExtResource("3_r0du0")]
+[node name="Player" parent="." unique_id=1730243485 instance=ExtResource("3_r0du0")]
 position = Vector2(127, -133)
 scale = Vector2(0.24906938, 0.24525562)

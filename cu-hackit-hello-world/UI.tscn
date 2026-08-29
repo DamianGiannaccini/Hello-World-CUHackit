@@ -10,8 +10,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_b3bc3")
+question_list = Array[Array]([["What kind of bear is best?\\nA: Black\\tB: Brown", "A"], ["Q2", "B"], ["Q3", "C"], ["Q4", "D"], ["Q5", "E"]])
 
-[node name="TextEdit" type="TextEdit" parent="." unique_id=1640274861]
+[node name="TextInput" type="TextEdit" parent="." unique_id=1640274861]
 visible = false
 custom_minimum_size = Vector2(250, 50)
 layout_mode = 1
@@ -25,4 +26,19 @@ offset_top = -98.0
 offset_right = 125.0
 offset_bottom = -48.0
 grow_horizontal = 2
+grow_vertical = 0
+
+[node name="QuestionLabel" type="Label" parent="." unique_id=1911161703]
+visible = false
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -252.0
+offset_top = -148.0
+offset_right = -52.0
+offset_bottom = -48.0
+grow_horizontal = 0
 grow_vertical = 0
