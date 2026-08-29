@@ -10,7 +10,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_b3bc3")
-question_list = Array[Array]([["What kind of bear is best?\\nA: Black\\tB: Brown", "A"], ["Q2", "B"], ["Q3", "C"], ["Q4", "D"], ["Q5", "E"]])
 
 [node name="TextInput" type="TextEdit" parent="." unique_id=1640274861]
 visible = false

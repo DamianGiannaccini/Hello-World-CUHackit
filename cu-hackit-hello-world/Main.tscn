@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://dqwi1sorijt4c"]
 
 [ext_resource type="Script" uid="uid://ccp7g40tfb3i" path="res://Camera.gd" id="1_uu6xs"]
+[ext_resource type="PackedScene" uid="uid://cuddgi4mduk3g" path="res://UI.tscn" id="2_cm0pq"]
 [ext_resource type="Texture2D" uid="uid://bdsucn8y8bau5" path="res://icon.svg" id="2_r0du0"]
 [ext_resource type="PackedScene" uid="uid://b5nxf7a0gsuy5" path="res://player.tscn" id="3_r0du0"]
 
@@ -79,13 +80,18 @@ sources/0 = SubResource("TileSetAtlasSource_cm0pq")
 [node name="Node2D" type="Node2D" unique_id=1225086017]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=534792150 node_paths=PackedStringArray("target")]
+zoom = Vector2(1.5, 1.5)
 script = ExtResource("1_uu6xs")
 target = NodePath("../Player")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Camera2D" unique_id=324012398]
+
+[node name="Control" parent="Camera2D/CanvasLayer" unique_id=1620173255 instance=ExtResource("2_cm0pq")]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1769999956]
 tile_map_data = PackedByteArray("AAABAAAAAAABAAAAAAACAAAAAAABAAAAAAADAAAAAAABAAAAAAAGAP7/AAABAAAAAAAHAP7/AAABAAAAAAAIAP7/AAABAAAAAAAJAP7/AAABAAAAAAANAP//AAABAAAAAAANAAAAAAABAAAAAAAOAAAAAAABAAAAAAAPAAAAAAABAAAAAAAUAP7/AAABAAAAAAAVAP7/AAABAAAAAAAWAP7/AAABAAAAAAAXAP7/AAABAAAAAAAXAP3/AAABAAAAAAAeAPz/AAABAAAAAAAfAPz/AAABAAAAAAAgAPz/AAABAAAAAAA=")
 tile_set = SubResource("TileSet_fos0i")
 
-[node name="Player" parent="." unique_id=1730243485 instance=ExtResource("3_r0du0")]
-position = Vector2(127, -133)
-scale = Vector2(0.24906938, 0.24525562)
+[node name="Player" parent="." unique_id=2026999712 instance=ExtResource("3_r0du0")]
+position = Vector2(46.999996, -71.99999)
+scale = Vector2(0.16000044, 0.16000044)
