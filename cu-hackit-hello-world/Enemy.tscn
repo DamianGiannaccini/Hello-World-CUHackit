@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://dwahqofcrr4wv"]
+
+[ext_resource type="Script" uid="uid://655mhdsdpv58" path="res://EnemyController.gd" id="1_s7bn3"]
+[ext_resource type="Texture2D" uid="uid://bdsucn8y8bau5" path="res://icon.svg" id="2_2hac7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e6d4v"]
+size = Vector2(14, 16)
+
+[node name="Enemy" type="CharacterBody2D" unique_id=1668142227 groups=["Enemy"]]
+script = ExtResource("1_s7bn3")
+projectile_speed = 400.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1904750447]
+shape = SubResource("RectangleShape2D_e6d4v")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=274914543]
+scale = Vector2(0.135, 0.135)
+texture = ExtResource("2_2hac7")
+
+[node name="Timer" type="Timer" parent="." unique_id=1290229955]
+wait_time = 5.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="timer_timeout"]
