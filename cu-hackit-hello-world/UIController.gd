@@ -52,6 +52,8 @@ func answer_question():
 	if text.nocasecmp_to(answer) == 0:
 		print("Success")
 		$TextInput.visible = false
+		player.is_player_active = true
+		Engine.time_scale = 1.0
 		
 		if curr_action == "attack":
 			attack()
