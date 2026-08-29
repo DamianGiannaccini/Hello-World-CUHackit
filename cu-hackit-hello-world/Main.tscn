@@ -5,7 +5,10 @@
 [ext_resource type="Texture2D" uid="uid://bdsucn8y8bau5" path="res://icon.svg" id="2_r0du0"]
 [ext_resource type="PackedScene" uid="uid://b5nxf7a0gsuy5" path="res://player.tscn" id="3_r0du0"]
 [ext_resource type="PackedScene" uid="uid://c56nvvabrfccg" path="res://BreakableWall.tscn" id="4_fos0i"]
+[ext_resource type="Texture2D" uid="uid://cpc3sf518qtjn" path="res://IMG_3863.jpeg" id="5_trn2v"]
 [ext_resource type="PackedScene" uid="uid://dwahqofcrr4wv" path="res://Enemy.tscn" id="6_3dxm6"]
+[ext_resource type="Texture2D" uid="uid://g1ll4nyo8ifx" path="res://IMG_3864.jpeg" id="6_03owx"]
+[ext_resource type="Texture2D" uid="uid://c3c8hcv2y1ny2" path="res://IMG_3865.jpeg" id="7_03owx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cm0pq"]
 texture = ExtResource("2_r0du0")
@@ -78,10 +81,31 @@ texture = ExtResource("2_r0du0")
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_3dxm6"]
 scenes/1/scene = ExtResource("4_fos0i")
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_20pc6"]
+texture = ExtResource("6_03owx")
+texture_region_size = Vector2i(525, 525)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-192.40665, -194.9383, 232, -160, 182.74548, 182.74548, -214.52734, 198.63635)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_trn2v"]
+texture = ExtResource("5_trn2v")
+texture_region_size = Vector2i(900, 900)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-152, 64, 232, -160, 256, 448, -232, 480)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wkp8b"]
+texture = ExtResource("7_03owx")
+texture_region_size = Vector2i(900, 900)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-461.95517, -67.275024, 24, -48, 206.31006, 71.76004, 439.53015, 71.76004, 416, 416, -424, 464)
+
 [sub_resource type="TileSet" id="TileSet_fos0i"]
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_cm0pq")
 sources/1 = SubResource("TileSetScenesCollectionSource_3dxm6")
+sources/3 = SubResource("TileSetAtlasSource_20pc6")
+sources/5 = SubResource("TileSetAtlasSource_trn2v")
+sources/6 = SubResource("TileSetAtlasSource_wkp8b")
 
 [node name="Node2D" type="Node2D" unique_id=1225086017]
 
@@ -95,7 +119,8 @@ target = NodePath("../Player")
 [node name="Control" parent="Camera2D/CanvasLayer" unique_id=1620173255 instance=ExtResource("2_cm0pq")]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1769999956 groups=["Environment"]]
-tile_map_data = PackedByteArray("AAABAAAAAAABAAAAAAACAAAAAAABAAAAAAADAAAAAAABAAAAAAAGAP7/AAABAAAAAAAHAP7/AAABAAAAAAAIAP7/AAABAAAAAAAJAP7/AAABAAAAAAANAP//AAABAAAAAAANAAAAAAABAAAAAAAOAAAAAAABAAAAAAAPAAAAAAABAAAAAAAUAP7/AAABAAAAAAAVAP7/AAABAAAAAAAWAP7/AAABAAAAAAAXAP7/AAABAAAAAAAXAP3/AAABAAAAAAAeAPz/AAABAAAAAAAfAPz/AAABAAAAAAAgAPz/AAABAAAAAAAUAP3/AQAAAAAAAQA=")
+scale = Vector2(0.025, 0.025)
+tile_map_data = PackedByteArray("AAABAAAAAAABAAAAAAACAAAAAAABAAAAAAAGAP7/AAABAAAAAAAHAP7/AAABAAAAAAAIAP7/AAABAAAAAAAJAP7/AAABAAAAAAANAP//AAABAAAAAAANAAAAAAABAAAAAAAOAAAAAAABAAAAAAAPAAAAAAABAAAAAAAUAP7/AAABAAAAAAAVAP7/AAABAAAAAAAWAP7/AAABAAAAAAAXAP7/AAABAAAAAAAXAP3/AAABAAAAAAAeAPz/AAABAAAAAAAfAPz/AAABAAAAAAAgAPz/AAABAAAAAAAUAP3/AQAAAAAAAQADAAAAAAABAAAAAAABAP//BQAAAAAAAAACAP//BQAAAAAAAAB0ALz/BgAAAAAAAADlALL/BQAAAAAAAADlALH/BQAAAAAAAABSAYb/AwAAAAAAAAA=")
 tile_set = SubResource("TileSet_fos0i")
 
 [node name="Player" parent="." unique_id=2026999712 instance=ExtResource("3_r0du0")]
