@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ccp7g40tfb3i" path="res://Camera.gd" id="1_uu6xs"]
 [ext_resource type="Texture2D" uid="uid://bdsucn8y8bau5" path="res://icon.svg" id="2_r0du0"]
+[ext_resource type="PackedScene" uid="uid://b5nxf7a0gsuy5" path="res://player.tscn" id="3_r0du0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uu6xs"]
 
@@ -92,8 +93,12 @@ texture = ExtResource("2_r0du0")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=534792150 node_paths=PackedStringArray("target")]
 script = ExtResource("1_uu6xs")
-target = NodePath("../RigidBody2D/Sprite2D")
+target = NodePath("../Node2D")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1769999956]
 tile_map_data = PackedByteArray("AAABAAAAAAABAAAAAAACAAAAAAABAAAAAAADAAAAAAABAAAAAAAGAP7/AAABAAAAAAAHAP7/AAABAAAAAAAIAP7/AAABAAAAAAAJAP7/AAABAAAAAAANAP//AAABAAAAAAANAAAAAAABAAAAAAAOAAAAAAABAAAAAAAPAAAAAAABAAAAAAAUAP7/AAABAAAAAAAVAP7/AAABAAAAAAAWAP7/AAABAAAAAAAXAP7/AAABAAAAAAAXAP3/AAABAAAAAAAeAPz/AAABAAAAAAAfAPz/AAABAAAAAAAgAPz/AAABAAAAAAA=")
 tile_set = SubResource("TileSet_fos0i")
+
+[node name="Node2D" parent="." unique_id=1730243485 instance=ExtResource("3_r0du0")]
+position = Vector2(127, -133)
+scale = Vector2(0.24906938, 0.24525562)
