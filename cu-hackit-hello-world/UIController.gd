@@ -1,11 +1,11 @@
 extends Control
 
 var question_list =[
-	["What kind of bear is best?\nA: Black     B: Brown", "A"],
-	["Q2", "B"],
-	["Q3", "C"],
-	["Q4", "D"],
-	["Q5", "E"]
+	["Print Hello world using C?", "printf(\"Hello world\");"],
+	["Given variable numCars = 9 How to do make the statement output 9", "printf(\"%d\",numCars);"],
+	["Type the actual output of each statement. Assume userAge is 32. printf(\"You are %d years.\", userAge);", "You are 32 years."],
+	["Fix the syntax errors. Assume variable numDogs has been declared. printf(\"%d\", numDogs).", "printf(\"%d\",numDogs);"],
+	["Type Hello World In the same line of code but on differnt lines", "printf(\"Hello \nWorld\");"]
 ]
 
 var curr_index = -1
