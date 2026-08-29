@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dwahqofcrr4wv" path="res://Enemy.tscn" id="6_3dxm6"]
 [ext_resource type="Texture2D" uid="uid://g1ll4nyo8ifx" path="res://IMG_3864.jpeg" id="6_03owx"]
 [ext_resource type="Texture2D" uid="uid://c3c8hcv2y1ny2" path="res://IMG_3865.jpeg" id="7_03owx"]
+[ext_resource type="PackedScene" uid="uid://d1cfa2eb7uyq2" path="res://Death.tscn" id="10_wkp8b"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cm0pq"]
 texture = ExtResource("2_r0du0")
@@ -117,10 +118,11 @@ target = NodePath("../Player")
 [node name="CanvasLayer" type="CanvasLayer" parent="Camera2D" unique_id=324012398]
 
 [node name="Control" parent="Camera2D/CanvasLayer" unique_id=1620173255 instance=ExtResource("2_cm0pq")]
+slowed_time = 0.1
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1769999956 groups=["Environment"]]
 scale = Vector2(0.025, 0.025)
-tile_map_data = PackedByteArray("AAABAAAAAAABAAAAAAACAAAAAAABAAAAAAAGAP7/AAABAAAAAAAHAP7/AAABAAAAAAAIAP7/AAABAAAAAAAJAP7/AAABAAAAAAANAP//AAABAAAAAAANAAAAAAABAAAAAAAOAAAAAAABAAAAAAAPAAAAAAABAAAAAAAUAP7/AAABAAAAAAAVAP7/AAABAAAAAAAWAP7/AAABAAAAAAAXAP7/AAABAAAAAAAXAP3/AAABAAAAAAAeAPz/AAABAAAAAAAfAPz/AAABAAAAAAAgAPz/AAABAAAAAAAUAP3/AQAAAAAAAQADAAAAAAABAAAAAAABAP//BQAAAAAAAAACAP//BQAAAAAAAAB0ALz/BgAAAAAAAADlALL/BQAAAAAAAADlALH/BQAAAAAAAABSAYb/AwAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAABAAAAAAABAAAAAAACAAAAAAABAAAAAAAGAP7/AAABAAAAAAAHAP7/AAABAAAAAAAIAP7/AAABAAAAAAAJAP7/AAABAAAAAAANAP//AAABAAAAAAANAAAAAAABAAAAAAAOAAAAAAABAAAAAAAPAAAAAAABAAAAAAAUAP7/AAABAAAAAAAVAP7/AAABAAAAAAAWAP7/AAABAAAAAAAXAP7/AAABAAAAAAAXAP3/AAABAAAAAAAeAPz/AAABAAAAAAAfAPz/AAABAAAAAAAgAPz/AAABAAAAAAAUAP3/AQAAAAAAAQADAAAAAAABAAAAAAABAP//BQAAAAAAAAACAP//BQAAAAAAAAB0ALz/BgAAAAAAAADlALL/BQAAAAAAAADlALH/BQAAAAAAAABSAYb/AwAAAAAAAAAcAiD/AwAAAAAAAAAdAh//AwAAAAAAAAAeAh//AwAAAAAAAAAfAh//AwAAAAAAAAAgAh//AwAAAAAAAACjA7L/AwAAAAAAAAAWA1//BgAAAAAAAAA9BI7/BgAAAAAAAACHBHL/AwAAAAAAAAD0BI//AwAAAAAAAAAHAzP/AQAAAAAAAQAEAxn/AQAAAAAAAQAEAwX/AQAAAAAAAQCLBFj/AQAAAAAAAQCJBDn/AQAAAAAAAQCKBDn/AQAAAAAAAQCJBBr/AQAAAAAAAQCGBPb+AQAAAAAAAQCGBPf+AQAAAAAAAQBLBVj/BQAAAAAAAADXBbL/BQAAAAAAAACGBmj/BgAAAAAAAAA=")
 tile_set = SubResource("TileSet_fos0i")
 
 [node name="Player" parent="." unique_id=2026999712 instance=ExtResource("3_r0du0")]
@@ -128,6 +130,17 @@ position = Vector2(46.999996, -71.99999)
 scale = Vector2(0.16000044, 0.16000044)
 
 [node name="Enemy" parent="." unique_id=1668142227 node_paths=PackedStringArray("target") instance=ExtResource("6_3dxm6")]
-position = Vector2(294, -40)
+position = Vector2(219, -107)
 target = NodePath("../Player")
 projectile_speed = 200.0
+
+[node name="Enemy2" parent="." unique_id=1321792704 node_paths=PackedStringArray("target") instance=ExtResource("6_3dxm6")]
+position = Vector2(663, -86)
+target = NodePath("../Player")
+projectile_speed = 200.0
+
+[node name="Death" parent="." unique_id=173647272 instance=ExtResource("10_wkp8b")]
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 0)
+position = Vector2(-12, 323)
+scale = Vector2(87.032104, 0.7678737)

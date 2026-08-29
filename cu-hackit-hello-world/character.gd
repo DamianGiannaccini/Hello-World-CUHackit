@@ -6,6 +6,7 @@ extends CharacterBody2D
 @export var projectile_speed = 100.0
 
 var is_player_active = true
+var is_blocking = false
 
 var projectile = load("res://Projectile.tscn")
 
@@ -38,4 +39,12 @@ func attack():
 	new_projectile.velocity = Vector2(projectile_speed, 0)
 	
 func block():
-	pass
+	is_blocking = true
+	print(is_blocking)
+	await get_tree().create_timer(3.0).timeout
+	print(is_blocking)
+	is_blocking = false
+
+func damage():
+	print("DEAD")
+	GLOBALS.load_level()

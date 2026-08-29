@@ -7,7 +7,7 @@
 radius = 73.0
 height = 146.0
 
-[node name="Character" type="CharacterBody2D" unique_id=2026999712]
+[node name="Character" type="CharacterBody2D" unique_id=2026999712 groups=["Player"]]
 script = ExtResource("1_onrkg")
 JUMP_VELOCITY = -400.0
 projectile_speed = 400.0

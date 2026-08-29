@@ -1,16 +1,16 @@
 extends Control
 
 var question_list =[
-	["Print Hello World! in C?", "printf(\"Hello World!\");"],
+	["Print 'Hello World!' in C?", "printf(\"Hello World!\");"],
 	["Given variable numCars = 9, print the variable to output 9", "printf(\"%d\",numCars);"],
 	["Type the output of each statement. Assume userAge is 32. printf(\"You are %d years old.\", userAge);", "You are 32 years old."],
 	["Fix the syntax errors. Assume variable numDogs has been declared. printf(\"%d\", numDogs).", "printf(\"%d\",numDogs);"],
-	["Print \"Hello World!\" on differnt lines using one print statement.", "printf(\"Hello\\nWorld!\");"],
-	["Type a statement that gets an input value into variable numUsers. Assume numUsers has been declared","scanf(\"%d\", &numCars);"],
-	["Type a statement that outputs Hey followed by a new line","printf(\"Hey\\n\");"],
-	["Type a statement that outputs: Hello","Printf(\"Hello\");"],
-	["type a statement that adds x and y together so they equal 3  if given variable x = 1 and y = 2","printf(\"%d\", x + y);"],
-	["Type a statement that outputs the value of numUsers (an integer variable). End the statement with a semicolon. Do not output a new line.","printf(\"%d\" ,numUsers);"]
+	["Print 'Hello World!' on differnt lines using one print statement.", "printf(\"Hello\\nWorld!\");"],
+	["Type a statement that scans an input value into variable numUsers. Assume numUsers has been declared","scanf(\"%d\", &numCars);"],
+	["Type a statement that outputs 'New Line' followed by a new line","printf(\"New Line\\n\");"],
+	["Type a statement that outputs: Hello, 1, 2, 3","Printf(\"Hello, %d, %d, %d\", 1, 2, 3);"],
+	["Type a statement that adds x and y together so they equal 3. Given variable x = 1 and y = 2","printf(\"%d\", x + y);"],
+	["Type a statement that outputs the value of numUsers (an integer variable).","printf(\"%d\" ,numUsers);"]
 ]
 
 var curr_index = -1

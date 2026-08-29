@@ -16,3 +16,8 @@ func on_area_entered(body: Node2D) -> void:
 		queue_free()
 	elif body.is_in_group("Environment"):
 		queue_free()
+	elif body.is_in_group("Player"):
+		if !body.is_blocking:
+			body.damage()
+		
+		queue_free()
