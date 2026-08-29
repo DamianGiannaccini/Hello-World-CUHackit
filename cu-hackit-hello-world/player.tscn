@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b5nxf7a0gsuy5"]
 
 [ext_resource type="Texture2D" uid="uid://bdsucn8y8bau5" path="res://icon.svg" id="1_4flbx"]
+[ext_resource type="Script" uid="uid://dwvcgwe42x3k4" path="res://character.gd" id="1_onrkg"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_onrkg"]
 radius = 73.0
@@ -9,6 +10,7 @@ height = 146.0
 [node name="Node2D" type="Node2D" unique_id=1730243485]
 
 [node name="Character" type="CharacterBody2D" parent="." unique_id=2026999712]
+script = ExtResource("1_onrkg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Character" unique_id=341407007]
 shape = SubResource("CapsuleShape2D_onrkg")
