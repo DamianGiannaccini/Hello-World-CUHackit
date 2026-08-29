@@ -15,6 +15,12 @@ run/main_scene="uid://dqwi1sorijt4c"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[global_group]
+
+Projectile=""
+Damageable=""
+Environment=""
+
 [input]
 
 ui_left={

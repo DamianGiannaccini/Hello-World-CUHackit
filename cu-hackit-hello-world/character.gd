@@ -3,8 +3,11 @@ extends CharacterBody2D
 
 @export var SPEED = 200.0
 @export var JUMP_VELOCITY = -700.0
+@export var projectile_speed = 100.0
 
 var is_player_active = true
+
+var projectile = load("res://Projectile.tscn")
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -27,7 +30,12 @@ func _physics_process(delta: float) -> void:
 
 
 func attack():
-	pass
-
+	var new_projectile = projectile.instantiate()
+	new_projectile.position = Vector2(position.x + 50, position.y)
+	get_parent().add_child(new_projectile)
+	
+	
+	new_projectile.velocity = Vector2(projectile_speed, 0)
+	
 func block():
 	pass
