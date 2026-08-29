@@ -1,11 +1,11 @@
 extends Control
 
 var question_list =[
-	["Print Hello world using C?", "printf(\"Hello world\");"],
-	["Given variable numCars = 9 How to do make the statement output 9", "printf(\"%d\",numCars);"],
-	["Type the actual output of each statement. Assume userAge is 32. printf(\"You are %d years.\", userAge);", "You are 32 years."],
+	["Print Hello World! in C?", "printf(\"Hello World!\");"],
+	["Given variable numCars = 9, print the variable to output 9", "printf(\"%d\",numCars);"],
+	["Type the output of each statement. Assume userAge is 32. printf(\"You are %d years old.\", userAge);", "You are 32 years old."],
 	["Fix the syntax errors. Assume variable numDogs has been declared. printf(\"%d\", numDogs).", "printf(\"%d\",numDogs);"],
-	["Type Hello World In the same line of code but on differnt lines", "printf(\"Hello \nWorld\");"]
+	["Print \"Hello World!\" on differnt lines using one print statement.", "printf(\"Hello\\nWorld!\");"]
 ]
 
 var curr_index = -1
@@ -20,17 +20,18 @@ func _ready() -> void:
 func on_text_entered() -> void:
 	var text : String = $TextInput.get_line(0)
 	text = text.strip_edges()
+	text = text.replace(" ", "")
 	
 	if text.nocasecmp_to("Attack()") == 0:
-		curr_index = randi_range(0, question_list.size())
+		curr_index = randi_range(0, question_list.size() - 1)
 		curr_action = "attack"
 		prompt_question()
 	elif text.nocasecmp_to("Crouch()") == 0:
-		curr_index = randi_range(0, question_list.size())
+		curr_index = randi_range(0, question_list.size() - 1)
 		curr_action = "crouch"
 		prompt_question()
 	elif text.nocasecmp_to("Block()") == 0:
-		curr_index = randi_range(0, question_list.size())
+		curr_index = randi_range(0, question_list.size() - 1)
 		curr_action = "block"
 		prompt_question()
 	
@@ -43,8 +44,12 @@ func prompt_question():
 func answer_question():
 	var text : String = $TextInput.get_line(0)
 	text = text.strip_edges()
+	text = text.replace(" ", "")
 	
-	if text.nocasecmp_to(question_list[curr_index][1]) == 0:
+	var answer = question_list[curr_index][1]
+	answer = answer.replace(" ", "")
+	
+	if text.nocasecmp_to(answer) == 0:
 		print("Success")
 		$TextInput.visible = false
 		
@@ -54,6 +59,8 @@ func answer_question():
 			block()
 	else:
 		print("Fail")
+		print(text)
+		print(question_list[curr_index][1])
 	
 	$TextInput.text = ""
 	$QuestionLabel.visible = false
